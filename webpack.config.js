@@ -3,6 +3,10 @@ const path = require("path");
 module.exports = {
   entry: path.resolve(__dirname, "src/clappr-nerd-stats.js"),
   mode: "production",
+  externals: {
+    clappr: "Clappr",
+    "@clappr/stats-plugin": "ClapprStats",
+  },
   module: {
     rules: [
       { test: /\.js$/, use: "babel-loader" },
